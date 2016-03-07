@@ -1,0 +1,73 @@
+<navi-menu></navi-menu>
+
+<div class="container">
+    <div class="form-group">
+        <div class="col-md-6">
+            <label>Job Title</label>
+            <input class="form-control input-lg" type="text" id="jobTitle" ng-model="jobTitle" placeholder="Awkwardly Good Developer">
+        </div>
+        <div class="col-md-6">
+            <label>Company Name</label>
+            <input class="form-control input-lg" type="text" id="companyName" ng-model="companyName" placeholder="Orange"><br>
+        </div>
+        
+       <div class="col-md-6">
+           <label>Job Type</label>{{selectedType | json}}<br>    
+                <div ng-repeat="job in jobType">
+                    <input type="radio" ng-value="job.type" ng-model="$parent.selectedType" />
+                    {{job.type}}
+                </div>
+                <hr/>
+        </div>
+        
+        <div class="col-md-6">
+            <label>Location</label> <br>
+                <input type="radio" name="onSite" id="onSite" ng-click="toggle()"> On Site<br>
+                    <p ng-show="myVar">
+                      <input type=text ng-model="streetAddress"> Street Address<br>
+                      <input type=text ng-model="city"> City<br>
+                      <input type=text ng-model="state"> State<br>
+                      <input type=text ng-model="postalCode"> Postal Code<br>
+                    </p>
+   
+                <input type="radio" name="remote" id="remote"> Remote<br>
+        </div>
+        
+        <div class="col-md-6">
+            <label>Job Description(or URL)</label>
+            <input class="form-control input-lg" type="text" id="jobDescription" ng-model="jobDescription" placeholder="http://your-job.com/jobs/job.html"><br>
+        </div>
+        
+        <div class="post">
+            <button class="btn btn-primary" ng-click="saveJobs()">
+                Post <span class="glyphicon glyphicon-ok"></span>
+            </button>
+            <input class="btn btn-primary" type="submit" ui-sref="postings" value="View Job Postings">
+        </div>
+        
+    <table class="table table-bordered">
+        <thead>
+            <th>Job Title</th>
+            <th>Company Name</th>
+            <th>Job Description(or URL)</th>
+            <th>Job Type</th>
+        </thead>
+        
+        <tbody ng-repeat="job in jobs">
+        
+        <tr>
+            <td>{{job.jobTitle}}</td>
+            <td>{{job.companyName}}</td>
+            <td>{{job.jobDescription}}</td>
+            <td>{{job.fullTime}}</td>
+        </tr>
+    
+    </tbody>
+        
+    </table>
+    </div>
+   
+</div>
+<div ui-view></div>
+<!--
+-->
