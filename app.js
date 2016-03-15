@@ -14,21 +14,21 @@ blocJobs.config(function($stateProvider, $urlRouterProvider){
     // For any unmatched url, send to /route1
     $urlRouterProvider.otherwise("/")
 
-     $stateProvider
-     .state('landing', {
+    $stateProvider
+    .state('landing', {
          url: '/',
          controller: 'mainCtrl',
-         templateUrl: 'landing.html'
+         templateUrl: '/templates/landing.html'
      })
     .state('job-post', {
         url: "/job-post",
         controller: 'jobPostCtrl',
-        templateUrl: "job-post.html"
+        templateUrl: "/templates/job-post.html"
     })
     .state('postings', {
         url: "/postings",
         controller: 'postingsCtrl',
-        templateUrl: "postings.html"
+        templateUrl: "/templates/postings.html"
     })
 })
 
