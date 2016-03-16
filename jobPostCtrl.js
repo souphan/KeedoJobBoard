@@ -4,29 +4,12 @@ blocJobs.controller('jobPostCtrl', ['$scope', '$firebaseArray', '$http', functio
     
     // TOGGLE RADIO BUTTON TO SHOW ADDRESS
     $scope.myVar = false;
-    $scope.myVarTwo = false;
     $scope.toggle = function() {
         $scope.myVar = !$scope.myVar;
     };
-    
-    $scope.toggleTwo = function() {
-    $scope.myVarTwo = !$scope.myVarTwo;
-    };
-    
-    $scope.formModel = {};
-    
-    $scope.onSubmit = function() {
-            console.log("Job submitted");
-            console.log($scope.formModel);  
-    
-//        $http.post('https://minmax-server.herokuapp.com/register/', $scope.formModel).
-//            success(function (data) {
-//            console.log("=D")
-//        }).error(function(data) {
-//            console.log("=(")
-//        });
+
+    $scope.search = {};
    
-    };
     // SETTING VARIABLE FOR EMPTY TEXT INPUT
     $scope.jobTitle = "";
     $scope.companyName = "";
@@ -69,18 +52,13 @@ blocJobs.controller('jobPostCtrl', ['$scope', '$firebaseArray', '$http', functio
         // CREATE A UNIQUE ID
         var timestamp = new Date().valueOf();
         $scope.myData.$add({jobTitle:$scope.jobTitle,id: timestamp,
-                            companyName:$scope.companyName,id: timestamp,
-                            jobDescription:$scope.jobDescription,id: timestamp,
+                            companyName:$scope.companyName,
+                            jobDescription:$scope.jobDescription,
                             streetAddress:$scope.streetAddress,
-                            city:$scope.city,id: timestamp,
-                            state:$scope.state,id: timestamp,
-                            postalCode:$scope.postalCode,id: timestamp,
+                            city:$scope.city,
+                            state:$scope.state,
+                            postalCode:$scope.postalCode,
                             jobType:$scope.selectedType
-//                            fullTime:$scope.fullTime,
-//                            partTime:$scope.partTime,
-//                            contract:$scope.contract,
-//                            freelance:$scope.freelance,
-//                            internship:$scope.internship
 });
         // SETTING VARIABLE TO EMPTY TEXT AND ARRAYS AFTER SUBMITTING DATA
         $scope.jobTitle = "";
@@ -91,19 +69,9 @@ blocJobs.controller('jobPostCtrl', ['$scope', '$firebaseArray', '$http', functio
         $scope.state = "";
         $scope.postalCode = "";
         $scope.jobType = [];
-//        $scope.fullTime = "Full Time";
-//        $scope.partTime = "Part Time";
-//        $scope.contract = "Contract";
-//        $scope.freelance = "Freelance";
-//        $scope.internship = "Internship";
     };
     
-    $scope.saveJobType = function() {
-        
-        $scope.myData.$add()
-    }
-    
-    // REFRESH DIGEST CYCLE WITH $APPLY SERVICE
+// REFRESH DIGEST CYCLE WITH $APPLY SERVICE
 //    $scope.myData.on('value', function(snapshot) {
 //        $scope.jobs = snapshot.val();
 //        $scope.$apply();
