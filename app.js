@@ -19,17 +19,17 @@ blocJobs.config(function($stateProvider, $urlRouterProvider){
     .state('landing', {
          url: '/',
          controller: 'mainCtrl',
-         templateUrl: '/templates/landing.html'
+         templateUrl: 'landing.html'
      })
     .state('job-post', {
-        url: "/job-post",
+        url: "job-post",
         controller: 'jobPostCtrl',
-        templateUrl: "/templates/job-post.html"
+        templateUrl: "job-post.html"
     })
     .state('postings', {
-        url: "/postings",
+        url: "postings",
         controller: 'postingsCtrl',
-        templateUrl: "/templates/postings.html"
+        templateUrl: "postings.html"
     })
 })
 
