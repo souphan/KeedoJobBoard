@@ -1,9 +1,9 @@
 <!--NAVIGATION MENU-->
 <!--<navi-menu></navi-menu>-->
+
 <div class="panel panel-default">
     <div class="panel-body panel-job" id="control-label-background">Post a friendly job =D</div>
 </div>
-
 <div class="container">
     <form ng-submit="saveJobs()"
           novalidate="novalidate">
@@ -45,6 +45,7 @@
         </div>
        
        <!--CHECKBOX BUTTON THAT PASSES IN JOB CATEGORY WHEN CLICKED-->
+<!--
        <div class="col-md-6">
            <label for="jobTypes" class="control-label">
                 <div class="panel panel-default">
@@ -59,8 +60,10 @@
                 </div>
                 <hr/>
         </div>
+-->
         
-               <!--CHECKBOX BUTTON THAT PASSES IN JOB CATEGORY WHEN CLICKED-->
+               <!--CHECKBOX BUTTON THAT PASSES IN JOB TYPES WHEN CLICKED-->
+<!--
        <div class="col-md-6">
            <label for="jobTypes" class="control-label">
                 <div class="panel panel-default">
@@ -75,8 +78,86 @@
                 </div>
                 <hr/>
         </div>
+-->
         
-        
+<div class="col-md-6">
+<label for="jobTypes" class="control-label"> 
+    <div class="panel panel-default">
+        <div class="panel-body panel-job">Job Type</div>
+    </div>
+</label><br>    
+    Full Time:
+    <input type="checkbox" ng-model="checkboxModel.fulltime"
+           ng-true-value="'Full Time'" ng-false-value="">
+   <br/>
+    Part Time:
+    <input type="checkbox" ng-model="checkboxModel.parttime"
+           ng-true-value="'Part Time'" ng-false-value="">
+   <br/>
+    Intern:
+    <input type="checkbox" ng-model="checkboxModel.intern"
+           ng-true-value="'Intern'" ng-false-value="">
+   <br/>
+    Contract:
+    <input type="checkbox" ng-model="checkboxModel.contract"
+           ng-true-value="'Contract'" ng-false-value="">
+   <br/>
+    Apprenticeship:
+    <input type="checkbox" ng-model="checkboxModel.apprenticeship"
+           ng-true-value="'Apprenticeship'" ng-false-value="">
+   <br/>
+</div>    
+<!--
+  <tt>Full Time = {{checkboxModel.fulltime}}</tt><br/>
+  <tt>Part Time = {{checkboxModel.parttime}}</tt><br/>
+  <tt>Intern = {{checkboxModel.intern}}</tt><br/>
+  <tt>Contract = {{checkboxModel.contract}}</tt><br/>
+  <tt>Apprenticeship = {{checkboxModel.apprenticeship}}</tt><br/> 
+-->
+
+
+<div class="col-md-6">
+<label for="jobTypes" class="control-label"> 
+    <div class="panel panel-default">
+        <div class="panel-body panel-job">Job Category</div>
+    </div>
+</label><br>    
+    Frontend:
+    <input type="checkbox" ng-model="checkboxModel.frontend"
+           ng-true-value="'Frontend'" ng-false-value="">
+   <br/>
+    Backend:
+    <input type="checkbox" ng-model="checkboxModel.backend"
+           ng-true-value="'Backend'" ng-false-value="">
+   <br/>
+    Fullstack:
+    <input type="checkbox" ng-model="checkboxModel.fullstack"
+           ng-true-value="'Fullstack'" ng-false-value="">
+    <br/>
+    Design:
+    <input type="checkbox" ng-model="checkboxModel.design"
+           ng-true-value="'Design'" ng-false-value="">
+   <br/>
+    IOS:
+    <input type="checkbox" ng-model="checkboxModel.ios"
+           ng-true-value="'IOS'" ng-false-value="">
+    <br/>
+    Android:
+    <input type="checkbox" ng-model="checkboxModel.android"
+           ng-true-value="'Android'" ng-false-value="">
+</div>   
+<!--
+  <tt>Frontend = {{checkboxModel.frontend}}</tt><br/>
+  <tt>Backend = {{checkboxModel.backend}}</tt><br/>
+  <tt>Fullstack = {{checkboxModel.fullstack}}</tt><br/>
+  <tt>Design = {{checkboxModel.design}}</tt><br/>
+  <tt>IOS = {{checkboxModel.ios}}</tt><br/> 
+  <tt>Android = {{checkboxModel.android}}</tt><br/> 
+-->
+
+
+
+
         <!--RADIO BUTTON FOR LOCATION WITH TEXT INPUT DROP DOWN TOGGLE FOR LOCATION-->
         <div class="col-md-6">
             <label for="location" class="control-label">
@@ -114,7 +195,7 @@
         
         <!--TEXT INPUT FOR JOB DESCRIPTION-->
         <div class="col-md-6">
-            <label for="jobDescription" class="control-label">
+            <label for="jobDescription" class="control-label" id="job-description">
                 <div class="panel panel-default">
                     <div class="panel-body panel-job">Job Description(or URL)</div>
                 </div>

@@ -43,10 +43,15 @@ blocJobs.controller('jobPostCtrl', ['$scope', '$firebaseArray', '$http', functio
     // INCLUDING RADIO BUTTON JOB LOCATION TO BE ADDED IN FIRBASE
     $scope.jobLocation.push({location:"Remote"});
     $scope.selectedLocation = $scope.jobLocation.location;
-    
-//    if ($scope.selectedLocation == $scope.jobLocation[0].location) {
-//        return $scope.toggle();
-//    };
+
+    $scope.checkboxModel = {
+       value1 : "",
+       frontend : "",
+       backend : "",
+       fullstack : "",
+       design : "",
+       ios : ""
+     };
     
     //SETTING PAGE START INDEXING POINT
     $scope.currentPage = 1;
@@ -88,5 +93,15 @@ blocJobs.controller('jobPostCtrl', ['$scope', '$firebaseArray', '$http', functio
 //        $scope.$apply();
 //    });
     
+
+    $scope.checkbox = "";
+    
+    $scope.$watch(function(){
+        return $scope.checkbox;
+    }, function(){
+        $scope.checkbox = Number($scope.checkbox);
+        console.log($scope.checkbox, typeof $scope.checkbox);
+    },true);
+
 
 }]);
